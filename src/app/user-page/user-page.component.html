@@ -1,0 +1,21 @@
+  <nav class="navbar navbar-light bg-info sticky-top">
+    <a class="navbar-brand">Git-User</a>
+    <form class="form-inline" (submit)="searchUser(userName.value,$event)">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search"
+        #userName/>
+      <button
+        class="btn btn-outline-success text-dark"
+        >Search
+      </button>
+    </form>
+  </nav>
+<div class="container">
+  <div class="row" *ngIf="usersArray.length!=0">
+    <app-users-profile class="col-lg-4 col-md-6 col-sm-12 mt-4" *ngFor="let input of usersArray"
+    [user]="input">
+    </app-users-profile>
+  </div>
+</div>

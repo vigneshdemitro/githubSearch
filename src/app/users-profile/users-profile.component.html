@@ -1,0 +1,21 @@
+<div class="card rounded-0">
+    <div class="card-header d-flex justify-content-center">
+      <h4>@{{ user.login }}</h4>
+    </div>
+    <div class="card-body">
+      <div class="row d-flex justify-content-center">
+        <img [src]="user.avatar_url" alt="userImage" width="300px" height="300px" />
+      </div>
+      <div class="row d-flex justify-content-center">
+        <a [href]="user.html_url" target="_blank" style="cursor: pointer;">GitHub Page</a>
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="row justify-content-between">
+        <span>Repo</span>
+        <button class="btn btn-sm btn-outline-primary" (click)="getRepo(user.html_url)">
+          View
+        </button>
+      </div>
+    </div>
+  </div>
